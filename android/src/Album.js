@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { FlashList } from "@shopify/flash-list";
 import axios from 'axios';
 import {
     StyleSheet,
@@ -30,15 +29,16 @@ const Album = ({ navigation }) => {
 
     return (
         <View style={styles.flex}>
-            <ImageBackground style={styles.flex} source={require('/home/cepl/Connect-App/assets/post_details.jpg')}>
-                    <FlashList
+            <ImageBackground style={styles.flex} source={require('/home/divum/Projects/React-Native/API/assets/post_details.jpg')}>
+                <View style={styles.container}>
+
+                    <FlatList
                         data={data}
                         renderItem={renderItem}
-                        // keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.id}
                         numColumns={2}
-                        estimatedItemSize={200}
                     />
-                  
+                </View>
             </ImageBackground>
         </View>
     );
